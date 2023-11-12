@@ -1,0 +1,11 @@
+.env
+.env.*
+.prettierignore
+.prettierrc
+.gitignore
+pnpm-lock
+*.svg
+*.png
+*.jpg
+*.log
+*.woff
