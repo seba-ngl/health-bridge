@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     resolve: {
         alias: {
+            shadcn: '/src/shadcn',
             components: '/src/components',
             hooks: '/src/hooks'
         }
