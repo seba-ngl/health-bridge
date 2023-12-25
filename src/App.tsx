@@ -1,19 +1,15 @@
+import { useTranslation } from 'react-i18next';
+
+import { LanguageSelect } from 'components/LanguageSelect';
 import { Button } from 'shadcn/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'shadcn/ui/tabs';
 
 export function App() {
+    const { t } = useTranslation();
+
     return (
         <div className="text-3xl">
-            <Button>Aaaa test</Button>
-
-            <Tabs defaultValue="account" className="w-[400px]">
-                <TabsList>
-                    <TabsTrigger value="account">Account</TabsTrigger>
-                    <TabsTrigger value="password">Password</TabsTrigger>
-                </TabsList>
-                <TabsContent value="account">Make changes to your account here.</TabsContent>
-                <TabsContent value="password">Change your password here.</TabsContent>
-            </Tabs>
+            <Button key={'test'}>{t('web.test')}</Button>
+            <LanguageSelect />
         </div>
     );
 }

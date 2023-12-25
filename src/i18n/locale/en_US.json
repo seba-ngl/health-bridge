@@ -1,0 +1,9 @@
+{
+    "web": {
+        "test": "Test",
+        "language": {
+            "en": "English",
+            "es": "Spanish"
+        }
+    }
+}

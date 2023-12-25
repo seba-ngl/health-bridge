@@ -7,7 +7,8 @@ export default defineConfig({
         alias: {
             shadcn: '/src/shadcn',
             components: '/src/components',
-            hooks: '/src/hooks'
+            hooks: '/src/hooks',
+            i18n: '/src/i18n'
         }
     },
     plugins: [react()]

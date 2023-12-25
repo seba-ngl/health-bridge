@@ -1,0 +1,9 @@
+{
+    "web": {
+        "test": "Etestar",
+        "language": {
+            "en": "Ingles",
+            "es": "Espanol"
+        }
+    }
+}
