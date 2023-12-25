@@ -1,15 +1,14 @@
 import ReactCountryFlag from 'react-country-flag';
 import { useTranslation } from 'react-i18next';
 
+import { I18nLocale } from 'i18n';
 import {
     Select,
-    SelectContent as ShadcnContent,
     SelectItem,
     SelectTrigger,
-    SelectValue
+    SelectValue,
+    SelectContent as ShadcnContent
 } from 'shadcn/ui/select';
-
-import { I18nLocale } from 'i18n';
 
 export function LanguageSelect() {
     const { i18n } = useTranslation();
@@ -73,7 +72,7 @@ function SelectContent() {
     ];
 
     return (
-        <ShadcnContent>
+        <ShadcnContent test-id="language-select">
             {languages.map((item) => (
                 <SelectItem key={item.value} value={item.value}>
                     <div className="flex items-center gap-2">
