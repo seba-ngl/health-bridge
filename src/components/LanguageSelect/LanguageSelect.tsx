@@ -1,43 +1,87 @@
+import ReactCountryFlag from 'react-country-flag';
 import { useTranslation } from 'react-i18next';
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'shadcn/ui/select';
+import {
+    Select,
+    SelectContent as ShadcnContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from 'shadcn/ui/select';
 
 import { I18nLocale } from 'i18n/locale';
 
 export function LanguageSelect() {
-    const { i18n, t } = useTranslation();
-
-    const languages = [
-        {
-            value: I18nLocale.EN,
-            display: t('web.language.en')
-        },
-        {
-            value: I18nLocale.ES,
-            display: t('web.language.es')
-        },
-        {
-            value: I18nLocale.RO,
-            display: t('web.language.ro')
-        }
-    ];
+    const { i18n } = useTranslation();
 
     function handleChange(value: I18nLocale) {
         i18n.changeLanguage(value);
     }
 
     return (
-        <Select onValueChange={handleChange} defaultValue={i18n.language}>
-            <SelectTrigger>
-                <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-                {languages.map((item) => (
-                    <SelectItem key={item.display} value={item.value}>
+        <div className="inline-flex">
+            <Select onValueChange={handleChange} defaultValue={i18n.language}>
+                <SelectTrigger className="inline-flex gap-4">
+                    <SelectValue />
+                </SelectTrigger>
+                <SelectContent />
+            </Select>
+        </div>
+    );
+}
+
+function SelectContent() {
+    const { t } = useTranslation();
+
+    const languages = [
+        {
+            flag: (
+                <ReactCountryFlag
+                    countryCode="US"
+                    style={{
+                        fontSize: '32px'
+                    }}
+                />
+            ),
+            value: I18nLocale.EN,
+            display: t('web.language.en')
+        },
+        {
+            flag: (
+                <ReactCountryFlag
+                    countryCode="ES"
+                    style={{
+                        fontSize: '32px'
+                    }}
+                />
+            ),
+            value: I18nLocale.ES,
+            display: t('web.language.es')
+        },
+        {
+            flag: (
+                <ReactCountryFlag
+                    countryCode="RO"
+                    style={{
+                        fontSize: '32px'
+                    }}
+                />
+            ),
+            value: I18nLocale.RO,
+            display: t('web.language.ro')
+        }
+    ];
+
+    return (
+        <ShadcnContent>
+            {languages.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                    <div className="flex items-center gap-2">
+                        {item.flag}
                         {item.display}
-                    </SelectItem>
-                ))}
-            </SelectContent>
-        </Select>
+                    </div>
+                </SelectItem>
+            ))}
+        </ShadcnContent>
     );
 }

@@ -5,6 +5,7 @@
     "tabWidth": 4,
     "printWidth": 100,
     "bracketSpacing": true,
+    "plugins": ["prettier-plugin-tailwindcss"],
     "overrides": [
         {
             "files": [".prettierrc", ".eslintrc", ".lintstagedrc", "package.json", "*.json"],

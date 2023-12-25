@@ -7,7 +7,7 @@ export function App() {
     const { t } = useTranslation();
 
     return (
-        <div className="text-3xl">
+        <div className="flex gap-4">
             <Button>{t('web.test')}</Button>
             <LanguageSelect />
         </div>
