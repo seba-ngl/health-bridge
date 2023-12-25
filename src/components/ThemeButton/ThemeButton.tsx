@@ -19,9 +19,9 @@ export function ThemeButton() {
     return (
         <Button onClick={handleClick} className="bg-transparent hover:bg-transparent">
             {theme === Themes.Dark ? (
-                <CiDark size={32} className="text-gray-700" data-testid="dark-icon" />
+                <CiDark size={32} className="text-accent-foreground" />
             ) : (
-                <CiLight size={32} className="text-gray-700" data-testid="light-icon" />
+                <CiLight size={32} className="text-accent-foreground" />
             )}
         </Button>
     );

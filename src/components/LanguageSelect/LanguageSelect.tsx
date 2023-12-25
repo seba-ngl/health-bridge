@@ -74,7 +74,7 @@ function SelectContent() {
     return (
         <ShadcnContent test-id="language-select">
             {languages.map((item) => (
-                <SelectItem key={item.value} value={item.value}>
+                <SelectItem key={item.value} value={item.value} className="cursor-pointer">
                     <div className="flex items-center gap-2">
                         {item.flag}
                         {item.display}
