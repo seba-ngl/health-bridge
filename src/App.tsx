@@ -8,7 +8,7 @@ export function App() {
 
     return (
         <div className="text-3xl">
-            <Button key={'test'}>{t('web.test')}</Button>
+            <Button>{t('web.test')}</Button>
             <LanguageSelect />
         </div>
     );

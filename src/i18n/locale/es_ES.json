@@ -1,9 +1,10 @@
 {
     "web": {
-        "test": "Etestar",
+        "test": "Prueba",
         "language": {
-            "en": "Ingles",
-            "es": "Espanol"
+            "en": "Inglés",
+            "es": "Español",
+            "ro": "Rumano"
         }
     }
 }

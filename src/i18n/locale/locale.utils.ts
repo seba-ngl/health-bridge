@@ -1,20 +1,27 @@
 import english from './en_US.json';
 import spanish from './es_ES.json';
+import romanian from './ro_RO.json';
 
 export enum I18nLocale {
     EN = 'en',
-    ES = 'es'
+    ES = 'es',
+    RO = 'ro'
 }
 
 export const resources = {
-    es: {
+    [I18nLocale.ES]: {
         translation: {
             ...spanish
         }
     },
-    en: {
+    [I18nLocale.EN]: {
         translation: {
             ...english
+        }
+    },
+    [I18nLocale.RO]: {
+        translation: {
+            ...romanian
         }
     }
 };

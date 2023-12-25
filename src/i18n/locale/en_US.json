@@ -3,7 +3,8 @@
         "test": "Test",
         "language": {
             "en": "English",
-            "es": "Spanish"
+            "es": "Spanish",
+            "ro": "Romanian"
         }
     }
 }

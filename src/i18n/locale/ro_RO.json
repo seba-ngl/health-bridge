@@ -1,0 +1,10 @@
+{
+    "web": {
+        "test": "Probă",
+        "language": {
+            "en": "Engleză",
+            "es": "Spaniolă",
+            "ro": "Română"
+        }
+    }
+}
