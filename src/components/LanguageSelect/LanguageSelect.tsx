@@ -20,7 +20,7 @@ export function LanguageSelect() {
     return (
         <div className="inline-flex">
             <Select onValueChange={handleChange} defaultValue={i18n.language}>
-                <SelectTrigger className="inline-flex gap-4">
+                <SelectTrigger className="inline-flex gap-8">
                     <SelectValue />
                 </SelectTrigger>
                 <SelectContent />

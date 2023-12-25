@@ -9,10 +9,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     resolve: {
         alias: {
-            shadcn: '/src/shadcn',
+            context: '/src/context',
             components: '/src/components',
             hooks: '/src/hooks',
-            i18n: '/src/i18n'
+            i18n: '/src/i18n',
+            pages: '/src/pages',
+            shadcn: '/src/shadcn'
         }
     },
     plugins: [react()],
