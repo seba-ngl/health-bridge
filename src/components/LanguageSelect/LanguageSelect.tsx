@@ -9,7 +9,7 @@ import {
     SelectValue
 } from 'shadcn/ui/select';
 
-import { I18nLocale } from 'i18n/locale';
+import { I18nLocale } from 'i18n';
 
 export function LanguageSelect() {
     const { i18n } = useTranslation();
