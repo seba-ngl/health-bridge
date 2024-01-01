@@ -13,7 +13,7 @@ if len(sys.argv) > 1:
     input_data = json.loads(sys.argv[1])
 
     # Your existing code
-    pickle_in = open("C:/Users/seba/Desktop/coding/licenta/health-bridge/backend/classifier.pkl", "rb")
+    pickle_in = open("C:/Users/seba/Desktop/coding/licenta/health-bridge/backend/heart_stroke/classifier.pkl", "rb")
     pickle_scaler = pickle.load(pickle_in)
     auxpre = pickle_scaler.predict([input_data])
     print(auxpre[0])
