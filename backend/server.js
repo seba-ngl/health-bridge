@@ -5,7 +5,7 @@ const inputData = [65, 1, 1, 1, 1];
 
 // Spawn a new Python process
 const pythonProcess = spawn("python", [
-    "run_prediction.py", // Replace with your Python script path
+    "./heart_stroke/run_prediction.py", // Replace with your Python script path
     JSON.stringify(inputData), // Pass the input data as a JSON string
 ]);
 
