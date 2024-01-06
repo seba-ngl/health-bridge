@@ -3,9 +3,9 @@ import spanish from './locale/es_ES.json';
 import romanian from './locale/ro_RO.json';
 
 export enum I18nLocale {
-    EN = 'en',
-    ES = 'es',
-    RO = 'ro'
+    EN = 'en-US',
+    ES = 'es-ES',
+    RO = 'ro-RO'
 }
 
 export const resources = {

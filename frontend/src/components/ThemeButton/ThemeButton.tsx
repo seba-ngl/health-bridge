@@ -13,8 +13,10 @@ export function ThemeButton() {
             return;
         }
 
-        setTheme(Themes.Light);
+        if (theme === Themes.Dark) setTheme(Themes.Light);
     }
+
+    if (!theme) return null;
 
     return (
         <Button onClick={handleClick} className="bg-transparent hover:bg-transparent">
