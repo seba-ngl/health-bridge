@@ -26,7 +26,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
         // theme can technically be any string so chose to
         // make a double check instead of casting as Themes
-        if (theme && (theme === Themes.Dark || theme === Themes.Light)) {
+        if (theme === Themes.Dark || theme === Themes.Light) {
             document.documentElement.setAttribute('data-theme', theme);
             setInternalTheme(theme);
             return;
