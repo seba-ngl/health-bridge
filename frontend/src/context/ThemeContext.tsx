@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export enum Themes {
     Light = 'light',
@@ -6,11 +6,11 @@ export enum Themes {
 }
 
 type ThemeContextProps = {
-    theme: Themes;
+    theme: Themes | undefined;
     setTheme: (theme: Themes) => void;
 };
 export const ThemeContext = createContext<ThemeContextProps>({
-    theme: Themes.Light,
+    theme: undefined,
     setTheme: () => {}
 });
 
@@ -19,32 +19,28 @@ type ThemeProviderProps = {
 };
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    const [internalTheme, setItermalTheme] = useState<Themes>(getInitialInternalTheme);
+    const [internalTheme, setInternalTheme] = useState<Themes | undefined>();
 
-    function getInitialInternalTheme() {
+    useEffect(() => {
         const theme = localStorage.getItem('theme');
 
-        if (theme) {
+        // theme can technically be any string so chose to
+        // make a double check instead of casting as Themes
+        if (theme && (theme === Themes.Dark || theme === Themes.Light)) {
             document.documentElement.setAttribute('data-theme', theme);
-            return theme as Themes;
+            setInternalTheme(theme);
+            return;
         }
 
-        if (!theme) {
-            const result = window.matchMedia('(prefers-color-scheme: dark)');
-            const defaultTheme = result.matches ? Themes.Dark : Themes.Light;
-            document.documentElement.setAttribute('data-theme', defaultTheme);
-            localStorage.setItem('theme', defaultTheme);
-
-            return defaultTheme;
-        }
-
-        // this shouldn't ever happen if the theme object from localStorage
-        // is part of Themes
-        return Themes.Light;
-    }
+        const result = window.matchMedia('(prefers-color-scheme: dark)');
+        const defaultTheme = result.matches ? Themes.Dark : Themes.Light;
+        document.documentElement.setAttribute('data-theme', defaultTheme);
+        localStorage.setItem('theme', defaultTheme);
+        setInternalTheme(defaultTheme);
+    }, []);
 
     function handleThemeSwitch(theme: Themes) {
-        setItermalTheme(theme);
+        setInternalTheme(theme);
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }
